@@ -20,15 +20,14 @@ class _RangeSelectorPageState extends State<RangeSelectorPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Minimum',
-                ),
-                keyboardType: TextInputType.numberWithOptions(
-                  decimal: false,
-                  signed: true,
-                ),
+              RangeSelectorTextFormField(
+                labelText: 'Minimum',
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              RangeSelectorTextFormField(
+                labelText: 'Maximum',
               ),
             ],
           ),
@@ -40,6 +39,27 @@ class _RangeSelectorPageState extends State<RangeSelectorPage> {
             // TODO: Validate the form
             // TODO: Navigate to the next page
           }),
+    );
+  }
+}
+
+class RangeSelectorTextFormField extends StatelessWidget {
+  const RangeSelectorTextFormField({Key? key, required this.labelText})
+      : super(key: key);
+
+  final String labelText;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: labelText,
+      ),
+      keyboardType: TextInputType.numberWithOptions(
+        decimal: false,
+        signed: true,
+      ),
     );
   }
 }
