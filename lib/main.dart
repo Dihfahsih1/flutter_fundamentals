@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/range_selector_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const AppWidget());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AppWidget extends StatelessWidget {
+  const AppWidget({super.key});
 
   // This widget is the root of your application.
   @override
@@ -14,19 +15,5 @@ class MyApp extends StatelessWidget {
       title: 'Randomizer',
       home: RangeSelectorPage(),
     );
-  }
-}
-
-class RangeSelectorPage extends StatefulWidget {
-  const RangeSelectorPage({super.key});
-
-  @override
-  State<RangeSelectorPage> createState() => _RangeSelectorPageState();
-}
-
-class _RangeSelectorPageState extends State<RangeSelectorPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
